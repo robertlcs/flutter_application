@@ -42,7 +42,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
         color: Colors.white,
         child: new TabBar(
           controller: controller,
-          labelColor: Colors.green,
+          labelColor: Color(0xFF31C27C),
           labelStyle: new TextStyle(
             fontSize: 14,
           ),
