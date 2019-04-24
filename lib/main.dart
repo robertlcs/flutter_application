@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
 import 'package:flutter_application/routes/routers.dart';
-import 'package:flutter_application/views/MusicPage.dart';
+import 'package:flutter_application/views/HomePage.dart';
 
 const int ThemeColor = 0xFF31C27C;
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   }
 
   showWelcomePage() {
-    return new MusicPage();
+    return new HomePage();
   }
 
   @override
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(ThemeColor),
         accentColor: Color(ThemeColor),
         textTheme: TextTheme(
-          body1: TextStyle(color: Color(0x00000000), fontSize: 16.0),
+          body1: TextStyle(color: Color(ThemeColor), fontSize: 16.0),
         ),
         iconTheme: IconThemeData(
           color: Color(ThemeColor),
