@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_application/components/BannerWidget.dart';
 
 class MusicPage extends StatefulWidget {
@@ -11,13 +10,11 @@ class MusicPage extends StatefulWidget {
 }
 
 class MusicPageState extends State<MusicPage> {
-
   Color color = Colors.black45;
   Color mainColor = Color(0xFF31C27C);
 
   @override
   Widget build(BuildContext context) {
-
     Widget bottomSection = new Container(
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -31,18 +28,21 @@ class MusicPageState extends State<MusicPage> {
     );
 
     // TODO: implement build
-      return new Scaffold(
-        appBar: new AppBar(
-          backgroundColor: mainColor,
-          centerTitle: true,
-          title: new Text("音乐馆", style: new TextStyle(fontSize: 18.0, color: Colors.white)),
-        ),
-        body: new ListView(
-          children: <Widget>[
-            bottomSection
-          ],
-        ),
-      );
+    return new Scaffold(
+      appBar: new AppBar(
+        backgroundColor: mainColor,
+        centerTitle: true,
+        title: new Text("音乐馆",
+            style: new TextStyle(fontSize: 18.0, color: Colors.white)),
+      ),
+      body: new ListView(
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          new BannerWidget(),
+          bottomSection,
+        ],
+      ),
+    );
   }
 
   Column buildCloumn(IconData icon, String label) {
@@ -51,14 +51,9 @@ class MusicPageState extends State<MusicPage> {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         new Icon(icon),
-        new Text(
-          label,
-          style: new TextStyle(
-              fontSize: 12.0,
-              color: color,
-              fontWeight: FontWeight.w800
-          )
-        ),
+        new Text(label,
+            style: new TextStyle(
+                fontSize: 12.0, color: color, fontWeight: FontWeight.w800)),
       ],
     );
   }
